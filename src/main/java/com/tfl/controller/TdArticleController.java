@@ -32,4 +32,7 @@ public class TdArticleController {
         return "/td_article/add_article";
     }
 
+    /*@RequestMapping("queryArticleList")
+    public void*/
+
 }
