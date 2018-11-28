@@ -50,7 +50,7 @@
     <div class="row masonry">
 
         <!-- brick-wrapper -->
-        <div class="bricks-wrapper">
+        <div class="bricks-wrapper" id="cxl">
 
             <div class="grid-sizer"></div>
 
@@ -149,7 +149,7 @@
 
             </article> <!-- end article -->
 
-            <article class="brick entry format-standard animate-this">
+            <%--<article class="brick entry format-standard animate-this">
 
                 <div class="entry-thumb">
                     <a href="single-standard.html" class="thumb-link">
@@ -442,7 +442,7 @@
                     </div>
                 </div>
 
-            </article> <!-- end article -->
+            </article> <!-- end article -->--%>
 
         </div> <!-- end brick-wrapper -->
 
@@ -488,18 +488,44 @@
 <script type="text/javascript">
     function query(){
         $.ajax({
-            url:"chuli.php",
-            data:{u:uid},
+            url:"tdArticle/queryArticleList.do",
             type:"POST",
-            dataType:"TEXT",
+            data:{},
+            dataType:"json",
             success:function(data){ //回调函数 ,成功时返回的数据存在形参data里
-                if(data.trim()=="OK"){
-                    $("#ts").html("该用户名可用");
-                    $("#ts").css("color","green");
-                }else{
-                    $("#ts").html("该用户名不可用");
-                    $("#ts").css("color","red");
+                var aaa = data.returnCode;
+                if("SUCCESS" == aaa){
+                    $("#cxl").append("" +
+                        "<article class=\"brick entry format-standard animate-this\">\n" +
+                        "\n" +
+                        "                <div class=\"entry-thumb\">\n" +
+                        "                    <a href=\"single-standard.html\" class=\"thumb-link\">\n" +
+                        "                        <img src=\"${pageContext.request.contextPath}/assets/images/thumbs/diagonal-building.jpg\" alt=\"building\">\n" +
+                        "                    </a>\n" +
+                        "                </div>\n" +
+                        "\n" +
+                        "                <div class=\"entry-text\">\n" +
+                        "                    <div class=\"entry-header\">\n" +
+                        "\n" +
+                        "                        <div class=\"entry-meta\">\n" +
+                        "               \t\t\t<span class=\"cat-links\">\n" +
+                        "               \t\t\t\t<a href=\"#\">Design</a>\n" +
+                        "               \t\t\t\t<a href=\"#\">Photography</a>\n" +
+                        "               \t\t\t</span>\n" +
+                        "                        </div>\n" +
+                        "\n" +
+                        "                        <h1 class=\"entry-title\"><a href=\"single-standard.html\">Just a Standard Format Post.</a></h1>\n" +
+                        "\n" +
+                        "                    </div>\n" +
+                        "                    <div class=\"entry-excerpt\">\n" +
+                        "                        Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.\n" +
+                        "                    </div>\n" +
+                        "                </div>\n" +
+                        "\n" +
+                        "            </article>"
+                    )
                 }
+                console.log(data.returnCode);
             }
         });
     };

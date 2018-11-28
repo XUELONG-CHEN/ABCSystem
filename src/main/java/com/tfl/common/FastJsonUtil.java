@@ -25,7 +25,7 @@ public class FastJsonUtil {
      * @param map
      * @return
      */
-    public static String map2Json(Map<String, String> map){
+    public static String map2Json(Map<String, Object> map){
         String jsonStr = JSON.toJSONString(map);
         return jsonStr;
     }

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.tfl.dao.TdArticleMapper">
 
 	<sql id="baseColumn">
-    	id, title, content, release_time
+    	id, title, content, release_time, article_abstract, image_url
 	</sql>
 
 	<resultMap id="BaseMap" type="com.tfl.entity.TdArticle">
@@ -13,6 +13,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	    <result column="title" property="title"/>
 	    <result column="content" property="content"/>
 	    <result column="release_time" property="releaseTime"/>
+        <result column="article_abstract" property="articleAbstract"/>
+        <result column="image_url" property="imageUrl"/>
   	</resultMap>
 
     <insert id="addArticle" parameterType="com.tfl.entity.TdArticle">
@@ -25,5 +27,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         #{content}
         )
     </insert>
+
+    <select id="queryArticleList" parameterType="com.tfl.entity.TdArticle" resultMap="BaseMap">
+        SELECT
+        <include refid="baseColumn" />
+        FROM td_article
+    </select>
 
 </mapper>
