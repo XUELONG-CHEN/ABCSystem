@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html class="no-js oldie ie8" lang="zh">
 <html class="no-js oldie ie9" lang="zh">
@@ -120,6 +121,35 @@
                     </div> <!-- end featured-post-slider -->
                 </div> <!-- end entry content -->
             </div>
+
+            <c:forEach items="${articleList}" var="list">
+                <article class="brick entry format-standard animate-this">
+
+                    <div class="entry-thumb">
+                        <a href="single-standard.html" class="thumb-link">
+                            <img src="${pageContext.request.contextPath}${list.imageUrl}" alt="building">
+                        </a>
+                    </div>
+
+                    <div class="entry-text">
+                        <div class="entry-header">
+
+                            <div class="entry-meta">
+               			<span class="cat-links">
+               				<a href="#">${list.releaseTime}</a>
+               			</span>
+                            </div>
+
+                            <h1 class="entry-title"><a href="single-standard.html">${list.title}</a></h1>
+
+                        </div>
+                        <div class="entry-excerpt">
+                                ${list.articleAbstract}
+                        </div>
+                    </div>
+
+                </article>
+            </c:forEach>
 
             <article class="brick entry format-standard animate-this">
 
@@ -495,35 +525,7 @@
             success:function(data){ //回调函数 ,成功时返回的数据存在形参data里
                 var aaa = data.returnCode;
                 if("SUCCESS" == aaa){
-                    $("#cxl").append("" +
-                        "<article class=\"brick entry format-standard animate-this\">\n" +
-                        "\n" +
-                        "                <div class=\"entry-thumb\">\n" +
-                        "                    <a href=\"single-standard.html\" class=\"thumb-link\">\n" +
-                        "                        <img src=\"${pageContext.request.contextPath}/assets/images/thumbs/diagonal-building.jpg\" alt=\"building\">\n" +
-                        "                    </a>\n" +
-                        "                </div>\n" +
-                        "\n" +
-                        "                <div class=\"entry-text\">\n" +
-                        "                    <div class=\"entry-header\">\n" +
-                        "\n" +
-                        "                        <div class=\"entry-meta\">\n" +
-                        "               \t\t\t<span class=\"cat-links\">\n" +
-                        "               \t\t\t\t<a href=\"#\">Design</a>\n" +
-                        "               \t\t\t\t<a href=\"#\">Photography</a>\n" +
-                        "               \t\t\t</span>\n" +
-                        "                        </div>\n" +
-                        "\n" +
-                        "                        <h1 class=\"entry-title\"><a href=\"single-standard.html\">Just a Standard Format Post.</a></h1>\n" +
-                        "\n" +
-                        "                    </div>\n" +
-                        "                    <div class=\"entry-excerpt\">\n" +
-                        "                        Lorem ipsum Sed eiusmod esse aliqua sed incididunt aliqua incididunt mollit id et sit proident dolor nulla sed commodo est ad minim elit reprehenderit nisi officia aute incididunt velit sint in aliqua cillum in consequat consequat in culpa in anim.\n" +
-                        "                    </div>\n" +
-                        "                </div>\n" +
-                        "\n" +
-                        "            </article>"
-                    )
+                    $("#cxl").append("");
                 }
                 console.log(data.returnCode);
             }
@@ -531,7 +533,6 @@
     };
 
      $(function(){
-         query();
      })
 
 </script>

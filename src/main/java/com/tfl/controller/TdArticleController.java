@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
@@ -36,7 +37,7 @@ public class TdArticleController {
         return "/td_article/add_article";
     }
 
-    @ResponseBody
+/*    @ResponseBody
     @RequestMapping(value="queryArticleList", produces="application/json;charset=UTF-8;")
     public String queryArticleList(TdArticle tdArticle){
         List<TdArticle> articleList = tdArticleService.queryArticleList(tdArticle);
@@ -44,9 +45,15 @@ public class TdArticleController {
         returnMap.put("returnCode","SUCCESS");
         returnMap.put("returnMess","成功");
         returnMap.put("returnData",articleList);
-
-        //String json=JSON.toJSONString(returnMap);
         return FastJsonUtil.map2Json(returnMap);
+    }*/
+
+    @RequestMapping(value="queryArticleList", produces="application/json;charset=UTF-8;")
+    public ModelAndView queryArticleList(TdArticle tdArticle){
+        ModelAndView mav = new ModelAndView("/index");
+        List<TdArticle> articleList = tdArticleService.queryArticleList(tdArticle);
+        mav.addObject("articleList",articleList);
+        return mav;
     }
 
 }
