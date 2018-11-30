@@ -1,8 +1,6 @@
 package com.tfl.controller;
 
-import com.tfl.entity.LoginBulletin;
 import com.tfl.entity.SysUser;
-import com.tfl.service.LoginBulletinService;
 import com.tfl.service.SysUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
