@@ -34,4 +34,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         FROM td_article
     </select>
 
+    <select id="selectArticleById" parameterType="Integer" resultMap="BaseMap">
+        SELECT
+        <include refid="baseColumn" />
+        FROM td_article
+        WHERE id = #{id}
+    </select>
+
 </mapper>

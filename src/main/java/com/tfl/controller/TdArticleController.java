@@ -48,11 +48,19 @@ public class TdArticleController {
         return FastJsonUtil.map2Json(returnMap);
     }*/
 
-    @RequestMapping(value="queryArticleList", produces="application/json;charset=UTF-8;")
+    @RequestMapping(value="queryArticleList")
     public ModelAndView queryArticleList(TdArticle tdArticle){
         ModelAndView mav = new ModelAndView("/index");
         List<TdArticle> articleList = tdArticleService.queryArticleList(tdArticle);
         mav.addObject("articleList",articleList);
+        return mav;
+    }
+
+    @RequestMapping(value="selectArticleById")
+    public ModelAndView selectArticleById(Integer id){
+        ModelAndView mav = new ModelAndView("/showArticle");
+        TdArticle article = tdArticleService.selectArticleById(id);
+        mav.addObject("article",article);
         return mav;
     }
 

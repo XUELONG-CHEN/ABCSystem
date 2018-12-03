@@ -26,4 +26,8 @@ public class TdArticleServiceImpl implements TdArticleService {
     public List<TdArticle> queryArticleList(TdArticle tdArticle){
         return tdArticleMapper.queryArticleList(tdArticle);
     }
+
+    public TdArticle selectArticleById(Integer id){
+        return tdArticleMapper.selectArticleById(id);
+    }
 }

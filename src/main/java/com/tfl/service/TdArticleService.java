@@ -9,4 +9,6 @@ public interface TdArticleService {
     void addArticle(TdArticle tdArticle);
 
     List<TdArticle> queryArticleList(TdArticle tdArticle);
+
+    TdArticle selectArticleById(Integer id);
 }

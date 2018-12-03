@@ -9,7 +9,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Abstract</title>
+    <title>主页</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -126,7 +126,7 @@
                 <article class="brick entry format-standard animate-this">
 
                     <div class="entry-thumb">
-                        <a href="single-standard.html" class="thumb-link">
+                        <a href="tdArticle/selectArticleById.do?id=${list.id}" class="thumb-link">
                             <img src="${pageContext.request.contextPath}${list.imageUrl}" alt="building">
                         </a>
                     </div>
