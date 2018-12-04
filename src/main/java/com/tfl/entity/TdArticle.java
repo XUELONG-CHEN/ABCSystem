@@ -13,4 +13,5 @@ public class TdArticle {
     private Date releaseTime;
     private String articleAbstract;
     private String imageUrl;
+    private String type;
 }

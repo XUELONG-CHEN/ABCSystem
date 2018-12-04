@@ -123,6 +123,7 @@
             </div>
 
             <c:forEach items="${articleList}" var="list">
+                <c:if test="${list.type}=='1'">
                 <article class="brick entry format-standard animate-this">
 
                     <div class="entry-thumb">
@@ -149,6 +150,7 @@
                     </div>
 
                 </article>
+                </c:if>
             </c:forEach>
 
             <article class="brick entry format-standard animate-this">
