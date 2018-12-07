@@ -37,17 +37,6 @@ public class TdArticleController {
         return "/td_article/add_article";
     }
 
-/*    @ResponseBody
-    @RequestMapping(value="queryArticleList", produces="application/json;charset=UTF-8;")
-    public String queryArticleList(TdArticle tdArticle){
-        List<TdArticle> articleList = tdArticleService.queryArticleList(tdArticle);
-        Map<String,Object> returnMap = new HashMap<>();
-        returnMap.put("returnCode","SUCCESS");
-        returnMap.put("returnMess","成功");
-        returnMap.put("returnData",articleList);
-        return FastJsonUtil.map2Json(returnMap);
-    }*/
-
     @RequestMapping(value="queryArticleList")
     public ModelAndView queryArticleList(TdArticle tdArticle){
         ModelAndView mav = new ModelAndView("/index");
