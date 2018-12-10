@@ -31,11 +31,6 @@ public interface LoginBulletinMapper {
 	 * @param id 需要删除的id
 	 */
 	void deleteLoginBulletinById(Integer id);
-	
-	/**
-	 * 修改游戏登陆公告
-	 * 
-	 * @param loginBulletin 需要修改的数据
-	 */
+
 	void updateLoginBulletinById(LoginBulletin loginBulletin);
 }
