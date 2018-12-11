@@ -24,12 +24,7 @@ public interface LoginBulletinMapper {
 	 * @param loginBulletin 需要添加的数据
 	 */
 	void insertLoginBulletin(LoginBulletin loginBulletin);
-	
-	/**
-	 * 删除游戏登陆公告
-	 * 
-	 * @param id 需要删除的id
-	 */
+
 	void deleteLoginBulletinById(Integer id);
 
 	void updateLoginBulletinById(LoginBulletin loginBulletin);
