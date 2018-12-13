@@ -17,12 +17,7 @@ public interface LoginBulletinMapper {
 	 * @return 所有游戏公告数据
 	 */
 	List<LoginBulletin> listLoginBulletin(LoginBulletin loginBulletin);
-	
-	/**
-	 * 添加游戏登陆公告
-	 * 
-	 * @param loginBulletin 需要添加的数据
-	 */
+
 	void insertLoginBulletin(LoginBulletin loginBulletin);
 
 	void deleteLoginBulletinById(Integer id);
