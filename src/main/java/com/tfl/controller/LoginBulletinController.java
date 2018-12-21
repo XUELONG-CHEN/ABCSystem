@@ -21,18 +21,6 @@ public class LoginBulletinController {
 	
 	@Resource
 	private LoginBulletinService loginBulletinService;
-
-/*	@RequestMapping("listLoginBulletin.do")
-	public String listUsers(Model model, String name,String hiddenValue){
-		
-		String url="http://192.168.3.156:8080/GameManagementSystem1/users/listUsers.do";
-		JSONObject jsonResult = HttpClientUtils.httpGet(url);
-		JSONArray jsonArray = jsonResult.getJSONArray("result");
-        List<Users> usersList = JSON.parseArray(jsonArray.toJSONString(), Users.class);
-        model.addAttribute("usersList", usersList);
-			
-		return "/game_bulletin/loginBulletin_list";
-	}*/
 	
 	@RequestMapping("listLoginBulletin.do")
 	public String listLoginBulletin(Model model, LoginBulletin loginBulletin){
