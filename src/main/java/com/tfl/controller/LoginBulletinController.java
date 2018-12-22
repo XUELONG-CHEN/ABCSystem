@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import java.util.List;
 
-/**
- * 游戏登陆公告模块
- * 
- * @author xl.chen
- * @date 2018年5月24日上午10:35:27
- */
 @Controller
 @RequestMapping("loginBulletin")
 public class LoginBulletinController {
