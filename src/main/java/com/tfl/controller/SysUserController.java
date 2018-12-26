@@ -23,6 +23,4 @@ public class SysUserController {
         return "/sys_user/sysUser_list";
     }
 
-
-
 }
