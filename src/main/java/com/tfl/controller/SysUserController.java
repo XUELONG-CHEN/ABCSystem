@@ -21,6 +21,9 @@ public class SysUserController {
         List<SysUser> sysUserList = sysUserService.querySysUserList(SysUser);
         model.addAttribute("sysUserList", sysUserList);
         return "/sys_user/sysUser_list";
+
+
+
     }
 
 }
