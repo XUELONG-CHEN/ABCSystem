@@ -22,8 +22,6 @@ public class SysUserController {
         model.addAttribute("sysUserList", sysUserList);
         return "/sys_user/sysUser_list";
 
-
-
     }
 
 }
